@@ -4,7 +4,7 @@
 //@routes GET api/users/profile
 //@access private
 
-export const getUserProfile = (req, res) => {
+export const getUserProfile = async (req, res) => {
     const user = {
         name: 'Max',
         age: 26,

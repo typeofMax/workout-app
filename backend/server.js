@@ -5,6 +5,7 @@ import colors from 'colors';
 
 //@routes
 import userRoutes from './routes/userRoutes.js';
+import exercisesRoutes from './routes/exerciseRoutes.js';
 
 //@ Config
 import { dbConnect } from './config/db.js';
@@ -25,6 +26,7 @@ if (process.env.NODE_ENV === 'development') {
 app.use(express.json());
 
 app.use('/api/users', userRoutes);
+app.use('/api/exercises', exercisesRoutes);
 
 app.use(notFound);
 app.use(errorHandler);

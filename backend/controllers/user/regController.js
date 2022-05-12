@@ -1,26 +1,26 @@
-import User from '../../models/userModel.js';
-import asyncHandler from 'express-async-handler';
-import { generateToken } from '../../helper/generateToken.js';
+import User from '../../models/userModel.js'
+import asyncHandler from 'express-async-handler'
+import { generateToken } from '../../helpers/generateToken.js'
 
-//@descr User Registration
-//@routes POST api/users
-//@access public
-export const userRegistration = asyncHandler(async (req, res) => {
-    const { email, password } = req.body;
+// @desc    Register user
+// @route   POST /api/users
+// @access  Public
+export const registerUser = asyncHandler(async (req, res) => {
+	const { email, password } = req.body
 
-    const isRegistered = await User.findOne({ email });
+	const isHaveUser = await User.findOne({ email })
 
-    if (isRegistered) {
-        res.status(400);
-        throw new Error('Пользователь с таким email уже зарегистрирован');
-    }
+	if (isHaveUser) {
+		res.status(400)
+		throw new Error('Данный пользователь уже зарегистрирован')
+	}
 
-    const user = await User.create({
-        email,
-        password,
-    });
+	const user = await User.create({
+		email,
+		password,
+	})
 
-    const token = generateToken(user._id);
+	const token = generateToken(user._id)
 
-    res.json({ user, token });
-});
+	res.json({ user, token })
+})

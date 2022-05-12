@@ -1,14 +1,12 @@
-import mongoose from 'mongoose';
+import mongoose from 'mongoose'
 
-export const dbConnect = async () => {
-    try {
-        const connect = await mongoose.connect(
-            'mongodb://localhost:27017/workout-app'
-        );
+export const connectDB = async () => {
+	try {
+		const connect = await mongoose.connect(process.env.MONGO_URI)
 
-        console.log(`Mongo DB connected ${connect.connection.host}`);
-    } catch (error) {
-        console.error(`Error: ${error.message}`.red.underline.bold);
-        process.exit(1);
-    }
+		console.log(`MongoDB Connected: ${connect.connection.host}`.cyan.underline)
+	} catch (error) {
+		console.error(`Error: ${error.message}`.red.underline.bold)
+		process.exit(1)
+	}
 }

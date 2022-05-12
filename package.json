@@ -5,10 +5,13 @@
     "main": "index.js",
     "type": "module",
     "scripts": {
-        "start": "node backend/server",
         "server": "nodemon backend/server",
-        "client": "npm run dev --prefix frontend ",
-        "dev": "concurrently \"npm run server\" \"npm run client\" "
+        "server-start": "node backend/server",
+        "start": "concurrently \"npm run server-start\" \"npm run start --prefix client\"",
+        "dev": "concurrently \"npm run server\" \"npm run start --prefix client\"",
+        "build": "cd frontend && npm run build",
+        "install-client": "cd frontend && npm install",
+        "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
     },
     "repository": {
         "type": "git",

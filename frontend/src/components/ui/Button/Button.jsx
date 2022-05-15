@@ -1,10 +1,10 @@
 //@Styles
 import styles from './Button.module.scss';
 
-const Button = ({ text, callback, viewStyle = 'purple', ...props}) => {
+const Button = ({ text, viewStyle = 'purple', ...props}) => {
 
     return (
-      <button onClick={callback} className={styles[viewStyle]} {...props}>
+      <button className={styles[viewStyle]} {...props}>
         {text}
       </button>
     );

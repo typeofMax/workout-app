@@ -42,8 +42,14 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 button {
+    background-color: transparent;
+    cursor: pointer;
     border: none;
 }
 body {
+    height: 100vh;
     background-color: $darkpurple;
+}
+#root {
+    height: 100%;
 }

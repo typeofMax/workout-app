@@ -1,0 +1,18 @@
+@import '../../../scss/variables.scss';
+.input {
+  padding: 14px 15px;
+  width: 319px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: $darkpurple;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  &::placeholder {
+    color: #f1e8e8;
+  }
+  &:focus {
+    border-color: rgba($accent, 0.2);
+    outline: none;
+  }
+}

@@ -1,12 +1,17 @@
+//@Libs
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //@Components
-import Layout from './components/common/Layout';
 import Home from './components/pages/Home/Home';
+import NewWorkout from './components/pages/NewWorkout/NewWorkout';
 
 const App = () => {
     return (
-        <Layout>
-            <Home />
-        </Layout>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='new-workout' element={<NewWorkout />} />
+            </Routes>
+        </BrowserRouter>
     );
 };
 

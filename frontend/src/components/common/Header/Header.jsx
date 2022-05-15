@@ -1,21 +1,39 @@
+//@Libs
+import { useLocation, useNavigate } from 'react-router-dom';
+//@Components
+import Hamburger from './Hamburger/Hamburger';
 //@Styles
 import styles from './Header.module.scss';
-
 //@Images
 import user from '../../../images/header/user.svg';
-import menu from '../../../images/header/menu.svg';
+import arrow from '../../../images/header/arrow.svg';
 
 const Header = () => {
-    return (
-        <div className={styles.header}>
-            <button className={styles.header__button}>
-                <img src={user} alt='Authorization' />
-            </button>
-            <button className={styles.header__button}>
-                <img src={menu} alt='Menu' />
-            </button>
-        </div>
-    );
+  let { pathname } = useLocation();
+  let navigate = useNavigate();
+
+  return (
+    <div className={styles.header}>
+      {pathname !== '/' ? (
+        <>
+          <button
+            className={styles.header__button}
+            onClick={() => navigate(-1)}
+          >
+            <img src={arrow} alt='Arrow back' />
+          </button>
+          <Hamburger />
+        </>
+      ) : (
+        <>
+          <button className={styles.header__button}>
+            <img src={user} alt='Authorization button' />
+          </button>
+          <Hamburger />
+        </>
+      )}
+    </div>
+  );
 };
 
 export default Header;

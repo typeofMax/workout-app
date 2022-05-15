@@ -1,0 +1,26 @@
+@import '../../../scss/variables.scss';
+
+.purple {
+    display: block;
+    margin: 0 auto;
+    padding: 11px 46px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.16;
+    border-radius: 10px;
+    background: rgba($accent, 0.4);
+}
+.main {
+    display: block;
+    margin: 0 auto;
+    padding: 19px 49px;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.16;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.5s ease;
+    &:hover {
+        background: rgba(181, 52, 113, 0.4);
+    }
+}

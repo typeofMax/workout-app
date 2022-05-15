@@ -1,0 +1,16 @@
+.heading {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+.wrapper {
+  padding: 50px 92px 127px 92px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1rem;
+}

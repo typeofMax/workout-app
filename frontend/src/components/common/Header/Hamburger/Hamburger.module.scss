@@ -1,0 +1,46 @@
+@import '../../../../scss/variables.scss';
+@import '../../../../scss/animations.scss';
+.wrapper {
+  position: relative;
+  .button {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    &:hover {
+      color: $accent;
+    }
+  }
+  .nav {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 34px;
+    padding: 12px 14px;
+    width: 116px;
+    border-radius: 10px 0px 10px 10px;
+    box-shadow: $bs-16;
+    background-color: #fff;
+    animation: opacity 0.6s;
+    &_active {
+      display: block;
+    }
+    .list {
+			.item:not(:last-child) {
+				margin-bottom: 8px;
+			}
+      .link {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16px;
+        color: #000000;
+        &:hover {
+          color: $accent;
+        }
+        &.link-active {
+          color: $accent;
+        }
+      }
+    }
+  }
+}

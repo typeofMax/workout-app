@@ -1,9 +1,17 @@
+@import '../../scss/variables.scss';
 .wrapper {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    height: 100vh;
-    width: 500px;
+    max-width: 512px;
+    width: 100%;
     padding: 30px;
     margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    &.other-page {
+      border-radius: 0 0 10px 10px;
+      box-shadow: $bs-accent;
+    }
 }

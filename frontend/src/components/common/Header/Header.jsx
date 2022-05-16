@@ -26,7 +26,10 @@ const Header = () => {
         </>
       ) : (
         <>
-          <button className={styles.header__button}>
+          <button
+            className={styles.header__button}
+            onClick={() => navigate('authorization')}
+          >
             <img src={user} alt='Authorization button' />
           </button>
           <Hamburger />

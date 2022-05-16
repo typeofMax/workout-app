@@ -1,0 +1,19 @@
+.wrapper {
+  width: 320px;
+  padding: 5px;
+  margin: 0 auto 1rem auto;
+  border-radius: 10px;
+  text-align: center;
+  &.success {
+    background-color: #8bc24c;
+  }
+  &.error {
+    background-color: #de4307;
+  }
+  &.info {
+    background-color: #515bd4;
+  }
+  &.warning {
+    background-color: #f29c2b;
+  }
+}

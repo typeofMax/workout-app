@@ -1,7 +1,7 @@
 //@Libs
 import cn from 'classnames';
 import { useLocation } from 'react-router-dom';
-//@components
+//@Components
 import Header from './Header/Header';
 //@Styles
 import styles from './Layout.module.scss';

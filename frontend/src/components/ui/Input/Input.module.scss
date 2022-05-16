@@ -9,10 +9,13 @@
   font-size: 16px;
   line-height: 19px;
   &::placeholder {
-    color: #f1e8e8;
+    color: rgba($white, 0.5);
   }
   &:focus {
     border-color: rgba($accent, 0.2);
     outline: none;
+    &::placeholder {
+      color: $white;
+    }
   }
 }

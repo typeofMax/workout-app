@@ -1,0 +1,17 @@
+.heading {
+  text-transform: uppercase;
+}
+.wrapper {
+  padding: 50px 92px 127px 92px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 1rem;
+}
+.btn-group {
+  display: flex;
+  column-gap: 15px;
+}

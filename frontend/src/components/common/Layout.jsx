@@ -6,7 +6,7 @@ import Header from './Header/Header';
 //@Styles
 import styles from './Layout.module.scss';
 
-const Layout = ({ children, bgImage, height = '356px' }) => {
+const Layout = ({ children, bgImage, height = '356px', heading }) => {
   let { pathname } = useLocation();
 
   return (
@@ -17,7 +17,10 @@ const Layout = ({ children, bgImage, height = '356px' }) => {
       style={{ backgroundImage: `url(${bgImage})`, height: height }}
     >
       <Header />
-      <div className={styles.container}>{children}</div>
+      <div className={styles.container}>
+        <h1 className={styles.heading}>{heading}</h1>
+        {children}
+      </div>
     </div>
   );
 };

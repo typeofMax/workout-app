@@ -9,10 +9,11 @@ import { menuBase } from './menuBase';
 //@Images
 import menu from '../../../../images/header/menu.svg';
 import menuClose from '../../../../images/header/hamburger-close.svg';
-
+import useAuth from '../../../../hooks/useAuth';
 
 const Hamburger = () => {
   const [show, setShow] = useState(false);
+  const { setIsAuth } = useAuth();
 
   return (
     <div className={styles.wrapper}>
@@ -26,7 +27,7 @@ const Hamburger = () => {
               <li className={styles.item} key={item.title}>
                 <NavLink
                   className={({ isActive }) =>
-                    cn(styles.link, {[styles['link-active']]: isActive})
+                    cn(styles.link, { [styles['link-active']]: isActive })
                   }
                   to={item.path}
                 >
@@ -35,7 +36,9 @@ const Hamburger = () => {
               </li>
             );
           })}
-          <button className={styles.button}>Logout</button>
+          <button className={styles.button} onClick={() => setIsAuth(false)}>
+            Logout
+          </button>
         </ul>
       </nav>
     </div>

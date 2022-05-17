@@ -1,3 +1,4 @@
+@import '../../../scss/variables.scss';
 .wrapper {
   text-align: center;
   padding: 50px 92px 127px 92px;
@@ -12,4 +13,16 @@
 .btn-group {
   display: flex;
   column-gap: 15px;
+  >button {
+    transition: transform 0.2s;
+      &:hover {
+        transform: translateY(-3px);
+      }
+    &:first-child {
+      background-color: rgba($accent, 1.0);  
+    }
+    &:last-child {
+      background-color: rgba(32,73,105, 1);
+    }
+  }
 }

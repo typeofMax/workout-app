@@ -1,26 +1,28 @@
 //@Libs
-import { useState } from 'react';
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 //@Styles
 import styles from './Hamburger.module.scss';
 //@Helpers
 import { menuBase } from './menuBase';
+
+import useOutsideClick from '../../../../hooks/useOutsideClick';
 //@Images
 import menu from '../../../../images/header/menu.svg';
 import menuClose from '../../../../images/header/hamburger-close.svg';
-import useAuth from '../../../../hooks/useAuth';
 
 const Hamburger = () => {
-  const [show, setShow] = useState(false);
-  const { setIsAuth } = useAuth();
+  
+  const { ref, isComponentVisible, setIsComponentVisible } = useOutsideClick(false);
 
   return (
-    <div className={styles.wrapper}>
-      <button onClick={() => setShow(!show)}>
-        <img src={show ? menuClose : menu} alt='Menu' />
+    <div className={styles.wrapper} ref={ref}>
+      <button onClick={() => setIsComponentVisible(!isComponentVisible)}>
+        <img src={isComponentVisible ? menuClose : menu} alt='Menu' />
       </button>
-      <nav className={cn(styles.nav, { [styles.nav_active]: show })}>
+      <nav
+        className={cn(styles.nav, { [styles.nav_active]: isComponentVisible })}
+      >
         <ul className={styles.list}>
           {menuBase.map((item) => {
             return (
@@ -36,7 +38,7 @@ const Hamburger = () => {
               </li>
             );
           })}
-          <button className={styles.button} onClick={() => setIsAuth(false)}>
+          <button className={styles.button} >
             Logout
           </button>
         </ul>

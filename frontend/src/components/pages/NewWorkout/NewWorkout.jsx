@@ -15,9 +15,7 @@ const NewWorkout = () => {
 
   return (
     <>
-      <Layout bgImage={bgImage} height='260px'>
-        <h1 className={styles.heading}>Create new workout</h1>
-      </Layout>
+      <Layout bgImage={bgImage} height='260px' heading='Create new workout' />
       <div className={styles.wrapper}>
         <form className={styles.form}>
           <Input
@@ -26,7 +24,7 @@ const NewWorkout = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <SelectInput/>
+          <SelectInput />
           <Button text='Create' />
         </form>
       </div>

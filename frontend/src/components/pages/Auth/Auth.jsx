@@ -51,9 +51,7 @@ const Auth = () => {
 
   return (
     <>
-      <Layout bgImage={bgImage} height='260px'>
-        <h1 className={styles.heading}>Authorization</h1>
-      </Layout>
+      <Layout bgImage={bgImage} height='260px' heading='Authorization' />
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input

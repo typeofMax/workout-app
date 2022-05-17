@@ -1,6 +1,7 @@
 //@Libs
 import { useState } from 'react';
 import { useMutation } from 'react-query';
+import { useNavigate } from 'react-router-dom';
 //@Components
 import Layout from '../../common/Layout';
 import Input from '../../ui/Input/Input';
@@ -9,32 +10,61 @@ import Alert from '../../ui/Alert/Alert';
 import Loader from '../../ui/Loader/Loader';
 //@Helpers
 import { $api } from '../../../api/api';
+import useAuth from '../../../hooks/useAuth';
 //@Styles
 import styles from './Auth.module.scss';
 //@Images
 import bgImage from '../../../images/auth-bg.jpg';
 
 const Auth = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [userData, setUserData] = useState({ email: '', password: '' });
   const [type, setType] = useState('');
+  const navigate = useNavigate();
+  const { setIsAuth } = useAuth();
+
+  const onSuccessEnter = (token) => {
+    localStorage.setItem('token', token);
+    setIsAuth(true);
+    setUserData({ email: '', password: '' });
+    navigate('/');
+  };
 
   const {
     mutate: registration,
-    isLoading,
-    error,
+    isLoading: isLoadingReg,
+    error: errorReg,
   } = useMutation(
     'Registration',
     () =>
       $api({
         url: '/users',
         method: 'POST',
-        body: { email, password },
+        body: { email: userData.email, password: userData.password },
         auth: false,
       }),
     {
       onSuccess(data) {
-        localStorage.setItem('token', data.token);
+        onSuccessEnter(data.token);
+      },
+    }
+  );
+
+  const {
+    mutate: authentication,
+    isLoading: isLoadingAuth,
+    error: errorAuth,
+  } = useMutation(
+    'Authentication',
+    () =>
+      $api({
+        url: '/users/login',
+        method: 'POST',
+        body: { email: userData.email, password: userData.password },
+        auth: false,
+      }),
+    {
+      onSuccess(data) {
+        onSuccessEnter(data.token);
       },
     }
   );
@@ -43,7 +73,7 @@ const Auth = () => {
     e.preventDefault();
 
     if (type === 'Auth') {
-      console.log('Auth');
+      authentication();
     } else {
       registration();
     }
@@ -57,15 +87,19 @@ const Auth = () => {
           <Input
             type='email'
             placeholder='Email'
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={userData.email}
+            onChange={(e) =>
+              setUserData({ ...userData, email: e.target.value })
+            }
             required
           />
           <Input
             type='password'
             placeholder='Password'
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={userData.password}
+            onChange={(e) =>
+              setUserData({ ...userData, password: e.target.value })
+            }
             required
           />
           <div className={styles['btn-group']}>
@@ -73,8 +107,9 @@ const Auth = () => {
             <Button text='Sign up' onClick={() => setType('Reg')} />
           </div>
         </form>
-        {isLoading && <Loader />}
-        {error && <Alert type='error' text={error} />}
+        {(isLoadingAuth || isLoadingReg) && <Loader />}
+        {errorReg && <Alert type='error' text={errorReg} />}
+        {errorAuth && <Alert type='error' text={errorAuth} />}
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 //@Libs
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 //@Components
@@ -20,7 +20,14 @@ const Auth = () => {
   const [userData, setUserData] = useState({ email: '', password: '' });
   const [type, setType] = useState('');
   const navigate = useNavigate();
-  const { setIsAuth } = useAuth();
+  const { isAuth, setIsAuth } = useAuth();
+
+  useEffect(() => {
+    if (isAuth) {
+      navigate('/');
+    }
+  //eslint-disable-next-line
+  }, []);
 
   const onSuccessEnter = (token) => {
     localStorage.setItem('token', token);

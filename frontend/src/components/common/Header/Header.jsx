@@ -27,7 +27,6 @@ const Header = () => {
           >
             <img src={arrow} alt='Arrow back' />
           </button>
-          <Hamburger />
         </>
       ) : (
         <>
@@ -42,9 +41,9 @@ const Header = () => {
               height='40px'
             />
           </button>
-          <Hamburger />
         </>
       )}
+      {isAuth && <Hamburger />}
     </div>
   );
 };

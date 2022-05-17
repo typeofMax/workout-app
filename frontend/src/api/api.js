@@ -9,7 +9,7 @@ const instance = axios.create({
 export const $api = async ({ url, method = 'GET', body, auth = true }) => {
   if (auth) {
     const token = localStorage.getItem('token');
-    instance.defaults.headers.common['Authorization'] = token;
+    instance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   }
 
   let req = null;

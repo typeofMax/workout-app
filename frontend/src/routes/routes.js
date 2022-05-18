@@ -1,7 +1,7 @@
 //@Pages
-import Home from '../components/pages/Home/Home';
-import NewWorkout from '../components/pages/NewWorkout/NewWorkout';
-import Auth from '../components/pages/Auth/Auth';
+import Home from '../pages/Home/Home';
+import NewWorkout from '../pages/NewWorkout/NewWorkout';
+import Auth from '../pages/Auth/Auth';
 
 export const routes = [
   {

@@ -1,14 +1,14 @@
 ///@Libs
 import { useState } from 'react';
 //@Components
-import Layout from '../../common/Layout';
+import Layout from '../../components/common/Layout';
+import Input from '../../components/ui/Input/Input';
+import Button from '../../components/ui/Button/Button';
+import SelectInput from '../../components/ui/SelectInput/SelectInput';
 //@Styles
 import styles from './NewWorkout.module.scss';
 //@Images
-import bgImage from '../../../images/new-workout-bg.jpg';
-import Input from '../../ui/Input/Input';
-import Button from '../../ui/Button/Button';
-import SelectInput from '../../ui/SelectInput/SelectInput';
+import bgImage from '../../assets/images/new-workout-bg.jpg';
 
 const NewWorkout = () => {
   const [name, setName] = useState('');

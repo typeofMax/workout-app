@@ -1,7 +1,7 @@
 //@Components
-import Layout from '../../common/Layout';
+import Layout from '../../components/common/Layout';
 //@Images
-import bgImage from '../../../images/auth-bg.jpg';
+import bgImage from '../../assets/images/auth-bg.jpg';
 
 const Page404 = () => {
   return (

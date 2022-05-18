@@ -1,5 +1,5 @@
 //@Images
-import loader from '../../../images/loader.svg';
+import loader from '../../../assets/images/loader.svg';
 
 const Loader = () => {
   return (

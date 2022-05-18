@@ -3,13 +3,13 @@ import { useLocation, useNavigate } from 'react-router-dom';
 //@Components
 import Hamburger from './Hamburger/Hamburger';
 //@Helpers
-import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../core/hooks/useAuth';
 //@Styles
 import styles from './Header.module.scss';
 //@Images
-import user from '../../../images/header/user.svg';
-import arrow from '../../../images/header/arrow.svg';
-import dumbbell from '../../../images/header/dumbbell.svg';
+import user from '../../../assets/images/header/user.svg';
+import arrow from '../../../assets/images/header/arrow.svg';
+import dumbbell from '../../../assets/images/header/dumbbell.svg';
 
 const Header = () => {
   const { isAuth } = useAuth();

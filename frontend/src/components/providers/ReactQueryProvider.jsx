@@ -13,6 +13,6 @@ const ReactQueryProvider = () => {
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
   );
-}
+};
 
-export default ReactQueryProvider
+export default ReactQueryProvider;

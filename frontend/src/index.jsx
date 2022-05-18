@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 //@Components
-import ReactQueryProvider from './providers/ReactQueryProvider';
+import ReactQueryProvider from './components/providers/ReactQueryProvider';
 //@Helpers
 import reportWebVitals from './reportWebVitals';
 //@Styles

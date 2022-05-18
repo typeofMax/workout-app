@@ -5,11 +5,11 @@ import { NavLink } from 'react-router-dom';
 import styles from './Hamburger.module.scss';
 //@Helpers
 import { menuBase } from './menuBase';
-import useAuth from '../../../../hooks/useAuth';
-import useOutsideClick from '../../../../hooks/useOutsideClick';
+import useAuth from '../../../../core/hooks/useAuth';
+import useOutsideClick from '../../../../core/hooks/useOutsideClick';
 //@Images
-import menu from '../../../../images/header/menu.svg';
-import menuClose from '../../../../images/header/hamburger-close.svg';
+import menu from '../../../../assets/images/header/menu.svg';
+import menuClose from '../../../../assets/images/header/hamburger-close.svg';
 
 const Hamburger = () => {
   const { ref, isComponentVisible, setIsComponentVisible } = useOutsideClick(false);

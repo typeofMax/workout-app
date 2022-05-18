@@ -1,9 +1,9 @@
 //@Libs
 import { useState } from 'react';
 //@Components
-import AppRouter from '../components/AppRouter';
+import AppRouter from '../AppRouter';
 //@Helpers
-import { AuthContext } from '../contexts/AuthContext';
+import { AuthContext } from '../../core/contexts/AuthContext';
 
 const AppProvider = () => {
   const [isAuth, setIsAuth] = useState(!!localStorage.getItem('token'));
@@ -13,6 +13,6 @@ const AppProvider = () => {
       <AppRouter />
     </AuthContext.Provider>
   );
-}
+};
 
-export default AppProvider
+export default AppProvider;

@@ -3,18 +3,18 @@ import { useEffect, useState } from 'react';
 import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 //@Components
-import Layout from '../../common/Layout';
-import Input from '../../ui/Input/Input';
-import Button from '../../ui/Button/Button';
-import Alert from '../../ui/Alert/Alert';
-import Loader from '../../ui/Loader/Loader';
+import Layout from '../../components/common/Layout';
+import Input from '../../components/ui/Input/Input';
+import Button from '../../components/ui/Button/Button';
+import Alert from '../../components/ui/Alert/Alert';
+import Loader from '../../components/ui/Loader/Loader';
 //@Helpers
-import { $api } from '../../../api/api';
-import useAuth from '../../../hooks/useAuth';
+import { $api } from '../../core/api/api';
+import useAuth from '../../core/hooks/useAuth';
 //@Styles
 import styles from './Auth.module.scss';
 //@Images
-import bgImage from '../../../images/auth-bg.jpg';
+import bgImage from '../../assets/images/auth-bg.jpg';
 
 const Auth = () => {
   const [userData, setUserData] = useState({ email: '', password: '' });

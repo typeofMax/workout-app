@@ -1,3 +1,4 @@
+@import '../../scss/variables.scss';
 .wrapper {
   padding: 50px 92px 127px 92px;
 }
@@ -7,4 +8,17 @@
   align-items: center;
   justify-content: center;
   row-gap: 1rem;
+}
+.new-exercise {
+  width: 319px;
+  font-size: 15px;
+  line-height: 0.8;
+  text-align: end;
+  color: $accent;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    color: $accent;
+    transform: translateX(-5px);
+  }
 }

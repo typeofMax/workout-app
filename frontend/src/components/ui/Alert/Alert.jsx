@@ -1,5 +1,6 @@
 //@Libs
 import cn from 'classnames';
+import PropTypes  from 'prop-types';
 //@Styles
 import styles from './Alert.module.scss';
 
@@ -19,3 +20,8 @@ const Alert = ({type = 'success', text}) => {
 }
 
 export default Alert
+
+Alert.propTypes = {
+  type: PropTypes.string,
+  text: PropTypes.string,
+}

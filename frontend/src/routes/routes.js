@@ -2,6 +2,7 @@
 import Home from '../pages/Home/Home';
 import NewWorkout from '../pages/NewWorkout/NewWorkout';
 import Auth from '../pages/Auth/Auth';
+import NewExercise from '../pages/NewExercise/NewExercise';
 
 export const routes = [
   {
@@ -17,6 +18,11 @@ export const routes = [
   {
     path: 'new-workout',
     element: NewWorkout,
+    private: true,
+  },
+  {
+    path: 'new-exercise',
+    element: NewExercise,
     private: true,
   },
 ];

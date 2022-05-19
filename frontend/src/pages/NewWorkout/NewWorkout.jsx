@@ -1,5 +1,6 @@
 ///@Libs
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 //@Components
 import Layout from '../../components/common/Layout';
 import Input from '../../components/ui/Input/Input';
@@ -24,6 +25,9 @@ const NewWorkout = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <Link className={styles['new-exercise']} to='/new-exercise'>
+            Add new exercise
+          </Link>
           <SelectInput />
           <Button text='Create' />
         </form>

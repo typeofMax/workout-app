@@ -1,9 +1,9 @@
 //@Libs
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import useAuth from '../core/hooks/useAuth';
+import useAuth from './core/hooks/useAuth';
 //@Helpers
-import { routes } from '../routes/routes';
-import Page404 from '../pages/Page404/Page404';
+import { routes } from './routes/routes';
+import Page404 from './pages/Page404/Page404';
 
 const AppRouter = () => {
   const { isAuth } = useAuth();

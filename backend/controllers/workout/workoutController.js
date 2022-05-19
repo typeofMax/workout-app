@@ -5,11 +5,11 @@ import Workout from '../../models/workoutModel.js';
 // @route   POST /api/workouts
 // @access  Private
 export const createNewWorkout = asyncHandler(async (req, res) => {
-  const { name, exerciseIds } = req.body;
+  const { name, exercisesIds } = req.body;
 
   const workout = await Workout.create({
     name,
-    exercises: exerciseIds,
+    exercises: exercisesIds,
   });
 
   res.json(workout);

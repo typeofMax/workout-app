@@ -1,7 +1,7 @@
 //@Libs
 import { useState } from 'react';
 //@Components
-import AppRouter from '../AppRouter';
+import AppRouter from '../../AppRouter';
 //@Helpers
 import { AuthContext } from '../../core/contexts/AuthContext';
 

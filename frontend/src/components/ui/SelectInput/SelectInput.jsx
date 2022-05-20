@@ -1,27 +1,25 @@
 //@Libs
 import Select from 'react-select';
+import PropTypes from 'prop-types';
 //@Styles
 import './SelectInput.scss';
 
-const SelectInput = () => {
-
+const SelectInput = ({ data, ...props }) => {
   return (
     <Select
       className='react-select-container'
       classNamePrefix='react-select'
-      options={[
-        {
-          value: 'asdw2',
-          label: 'PushUps',
-        },
-        {
-          value: 'dsk2',
-          label: 'PullUps',
-        },
-      ]}
+      options={
+        data &&
+        data.map((item) => ({
+          value: item._id,
+          label: item.name,
+        }))
+      }
+      {...props}
       isMulti
     />
   );
-}
+};
 
 export default SelectInput;

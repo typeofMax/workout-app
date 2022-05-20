@@ -1,12 +1,12 @@
 //@Libs
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
-//@Styles
-import styles from './Hamburger.module.scss';
 //@Helpers
 import { menuBase } from './menuBase';
 import useAuth from '../../../../core/hooks/useAuth';
 import useOutsideClick from '../../../../core/hooks/useOutsideClick';
+//@Styles
+import styles from './Hamburger.module.scss';
 //@Images
 import menu from '../../../../assets/images/header/menu.svg';
 import menuClose from '../../../../assets/images/header/hamburger-close.svg';

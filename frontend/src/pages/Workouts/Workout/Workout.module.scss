@@ -1,0 +1,35 @@
+@import '../../../scss/variables.scss';
+.wrapper {
+  padding: 43px 16px;
+}
+.head {
+  &__time {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 1.3;
+    color: $white;
+  }
+  &__title {
+    text-transform: uppercase;
+  }
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 61px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    background-color: $purple;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    >img {
+      height: 35px;
+    }
+  }
+}

@@ -24,7 +24,11 @@ const Hamburger = () => {
   return (
     <div className={styles.wrapper} ref={ref}>
       <button onClick={() => setIsComponentVisible(!isComponentVisible)}>
-        <img src={isComponentVisible ? menuClose : menu} alt='Menu' />
+        <img
+          src={isComponentVisible ? menuClose : menu}
+          alt='Menu'
+          draggable={false}
+        />
       </button>
       <nav
         className={cn(styles.nav, { [styles.nav_active]: isComponentVisible })}
@@ -38,6 +42,7 @@ const Hamburger = () => {
                     cn(styles.link, { [styles['link-active']]: isActive })
                   }
                   to={item.path}
+                  end
                 >
                   {item.title}
                 </NavLink>

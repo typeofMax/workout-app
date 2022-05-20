@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 //@Components
 import Counters from '../../components/common/Counters/Counters';
 import Layout from '../../components/common/Layout';
-import Button from '../../components/ui/Button/Button';
+import { Button } from '../../components/ui';
 //@Helpers
 import { $api } from '../../core/api/api';
 import useAuth from '../../core/hooks/useAuth';
@@ -30,21 +30,23 @@ const Home = () => {
   );
 
   return (
-    <Layout bgImage={bgImage} height='100%'>
-      <Button
-        text='New'
-        viewStyle='main'
-        onClick={() => navigate('/new-workout')}
-      />
-      <h1 className={styles.heading}>SHOULDERS EXERCISES</h1>
-      {isSuccess && isAuth && (
-        <Counters
-          minutes={data.minutes}
-          workouts={data.workouts}
-          kgs={data.kgs}
+    <div className='container'>
+      <Layout bgImage={bgImage} height='100%'>
+        <Button
+          text='New'
+          viewStyle='main'
+          onClick={() => navigate('/new-workout')}
         />
-      )}
-    </Layout>
+        <h1 className={styles.heading}>SHOULDERS EXERCISES</h1>
+        {isSuccess && isAuth && (
+          <Counters
+            minutes={data.minutes}
+            workouts={data.workouts}
+            kgs={data.kgs}
+          />
+        )}
+      </Layout>
+    </div>
   );
 };
 

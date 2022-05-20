@@ -4,10 +4,7 @@ import { useMutation } from 'react-query';
 import { useNavigate } from 'react-router-dom';
 //@Components
 import Layout from '../../components/common/Layout';
-import Input from '../../components/ui/Input/Input';
-import Button from '../../components/ui/Button/Button';
-import Alert from '../../components/ui/Alert/Alert';
-import Loader from '../../components/ui/Loader/Loader';
+import { Input, Button, Alert, Loader } from '../../components/ui';
 //@Helpers
 import { $api } from '../../core/api/api';
 import useAuth from '../../core/hooks/useAuth';
@@ -26,7 +23,7 @@ const Auth = () => {
     if (isAuth) {
       navigate('/');
     }
-  //eslint-disable-next-line
+    //eslint-disable-next-line
   }, []);
 
   const onSuccessEnter = (token) => {
@@ -88,7 +85,9 @@ const Auth = () => {
 
   return (
     <>
-      <Layout bgImage={bgImage} height='260px' heading='Authorization' />
+      <Layout bgImage={bgImage} height='260px'> 
+        <h1 className={styles.heading}>Authorization</h1>
+      </Layout>
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input

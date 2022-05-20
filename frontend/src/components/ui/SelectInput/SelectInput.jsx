@@ -23,3 +23,8 @@ const SelectInput = ({ data, ...props }) => {
 };
 
 export default SelectInput;
+
+SelectInput.propTypes = {
+  data: PropTypes.array,
+  props: PropTypes.object,
+}

@@ -25,7 +25,7 @@ const Header = () => {
             className={styles.header__button}
             onClick={() => navigate(-1)}
           >
-            <img src={arrow} alt='Arrow back' />
+            <img src={arrow} alt='Arrow back' draggable={false} />
           </button>
         </>
       ) : (
@@ -39,6 +39,7 @@ const Header = () => {
               alt={isAuth ? 'Go to profile button' : 'Authorization button'}
               width='40px'
               height='40px'
+              draggable={false}
             />
           </button>
         </>

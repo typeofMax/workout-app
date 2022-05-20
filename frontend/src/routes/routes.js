@@ -4,6 +4,8 @@ import NewWorkout from '../pages/NewWorkout/NewWorkout';
 import Auth from '../pages/Auth/Auth';
 import NewExercise from '../pages/NewExercise/NewExercise';
 import Profile from '../pages/Profile/Profile';
+import Workouts from '../pages/Workouts/Workouts';
+import Workout from '../pages/Workouts/Workout/Workout';
 
 export const routes = [
   {
@@ -19,6 +21,16 @@ export const routes = [
   {
     path: 'profile',
     element: Profile,
+    private: true,
+  },
+  {
+    path: 'workouts',
+    element: Workouts,
+    private: true,
+  },
+  {
+    path: 'workouts/:id',
+    element: Workout,
     private: true,
   },
   {

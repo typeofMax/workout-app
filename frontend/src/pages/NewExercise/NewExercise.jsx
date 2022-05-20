@@ -4,10 +4,7 @@ import cn from 'classnames';
 import { useMutation } from 'react-query';
 //@Components
 import Layout from '../../components/common/Layout';
-import Input from '../../components/ui/Input/Input';
-import Button from '../../components/ui/Button/Button';
-import Loader from '../../components/ui/Loader/Loader';
-import Alert from '../../components/ui/Alert/Alert';
+import { Input, Button, Loader, Alert } from '../../components/ui';
 //@Helpers
 import { $api } from '../../core/api/api';
 //@Styles
@@ -54,8 +51,10 @@ const NewExercise = () => {
   };
 
   return (
-    <>
-      <Layout bgImage={bgImage} height='260px' heading='Create new exercise' />
+    <div className='container'>
+      <Layout bgImage={bgImage} height='260px'>
+        <h1>Create new exercise</h1>
+      </Layout>
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <Input
@@ -91,10 +90,10 @@ const NewExercise = () => {
           <Button text='Create' />
         </form>
         {isLoading && <Loader />}
-        {isSuccess && <Alert text='Successfully added'/>}
-        {error && <Alert type='error' text={error}/>}
+        {isSuccess && <Alert text='Successfully added' />}
+        {error && <Alert type='error' text={error} />}
       </div>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,23 @@
+@import '../../scss/variables.scss';
+.wrapper {
+  padding: 43px 16px;
+}
+.list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  &__item {
+    height: 61px;
+    padding: 18px 20px;
+    border-radius: 10px;
+    background-color: $purple;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    &:hover {
+      transform: translateX(-5px);
+    }
+  }
+}

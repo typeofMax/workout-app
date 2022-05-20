@@ -1,5 +1,6 @@
-//@Styles
+//@Libs
 import PropTypes from 'prop-types';
+//@Styles
 import styles from './Counters.module.scss';
 
 const Counters = ({ minutes, workouts, kgs }) => {

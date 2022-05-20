@@ -84,7 +84,7 @@ const Auth = () => {
   };
 
   return (
-    <>
+    <div className='container'>
       <Layout bgImage={bgImage} height='260px'> 
         <h1 className={styles.heading}>Authorization</h1>
       </Layout>
@@ -117,7 +117,7 @@ const Auth = () => {
         {errorReg && <Alert type='error' text={errorReg} />}
         {errorAuth && <Alert type='error' text={errorAuth} />}
       </div>
-    </>
+    </div>
   );
 };
 

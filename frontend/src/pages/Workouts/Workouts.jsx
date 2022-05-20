@@ -1,48 +1,80 @@
 //@Libs
-import { useQuery } from 'react-query';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useMutation, useQuery } from 'react-query';
 //@Components
 import Layout from '../../components/common/Layout';
-import { Loader } from '../../components/ui';
+import { Loader, Alert } from '../../components/ui';
 //@Helpers
 import { $api } from '../../core/api/api';
 //@Styles
 import styles from './Workouts.module.scss';
 //@Images
-import bgImage from '../../assets/images/profile-bg.jpg';
+import bgImage from '../../assets/images/workout-bg.jpg';
 
 const Workouts = () => {
-  const {
-    data: workouts,
-    isLoading,
-    isSuccess,
-  } = useQuery(
-    'Get workouts',
+  let navigate = useNavigate();
+
+  const { data, isSuccess } = useQuery(
+    'get workouts',
     () =>
       $api({
-        url: '/workouts',
+        url: `/workouts`,
       }),
     {
       refetchOnWindowFocus: false,
     }
   );
 
+  	const {
+      mutate: createWorkoutLog,
+      isLoading,
+      isSuccess: isSuccessMutate,
+      error,
+    } = useMutation(
+      'Create new workout log',
+      ({ workoutId }) =>
+        $api({
+          url: '/workouts/log',
+          method: 'POST',
+          body: { workoutId },
+        }),
+      {
+        onSuccess(data) {
+          navigate(`/workouts/${data._id}`);
+        },
+      }
+    );
+
   return (
     <div className='container'>
       <Layout bgImage={bgImage} height='260px'>
         <h1>My workouts</h1>
       </Layout>
+
       <div className={styles.wrapper}>
-        <ul className={styles.list}>
-          {isLoading && <Loader />}
-          {isSuccess &&
-            workouts &&
-            workouts.map((workout) => (
-              <li className={styles.list__item} key={workout._id}>
-                <Link to={`${workout._id}`}>{workout.name}</Link>
+        {error && <Alert type='error' text={error} />}
+        {isSuccessMutate && <Alert text='Workout log created' />}
+        {isLoading && <Loader />}
+        {isSuccess && (
+          <ul className={styles.list}>
+            {data.map((workout, idx) => (
+              <li
+                className={styles['list__item']}
+                key={`workout ${idx}`}
+                onClick={() =>
+                  createWorkoutLog({
+                    workoutId: workout._id,
+                  })
+                }
+              >
+                {workout.name}
               </li>
             ))}
-        </ul>
+          </ul>
+        )}
+        {isSuccess && data?.length === 0 && (
+          <Alert type='warning' text='Workouts not found' />
+        )}
       </div>
     </div>
   );

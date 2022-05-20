@@ -56,8 +56,10 @@ const NewWorkout = () => {
   };
 
   return (
-    <>
-      <Layout bgImage={bgImage} height='260px' heading='Create new workout' />
+    <div className='container'>
+      <Layout bgImage={bgImage} height='260px'>
+        <h1 className={styles.heading}>Create new workout</h1>
+      </Layout>
       <div className={styles.wrapper}>
         <form className={styles.form} onSubmit={submitHandler}>
           <Input
@@ -82,7 +84,7 @@ const NewWorkout = () => {
         {isSuccess && <Alert text='Successfully created' />}
         {error && <Alert type='error' text={error} />}
       </div>
-    </>
+    </div>
   );
 };
 

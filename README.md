@@ -1,5 +1,4 @@
-## **Workout app** - Web application for sports training
-<hr/>
+# **Workout app** - Web application for sports training
 
 **Technology used**
 

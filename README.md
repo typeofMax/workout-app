@@ -2,10 +2,8 @@
 
 **Technology used**
 
-**Frontend**  
-React, SCSS, axios, classnames, react-router-dom, react-select, prop-types.
+**Frontend** - React, SCSS, axios, classnames, react-router-dom, react-select, prop-types.
 
-**Backend**
-MongoDB, mongoose, express, dotenv, bcryptjs, concurrently, nodemon
+**Backend** - MongoDB, mongoose, express, dotenv, bcryptjs, concurrently, nodemon
 
 

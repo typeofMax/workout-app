@@ -6,4 +6,5 @@
 
 **Backend** - MongoDB, mongoose, express, dotenv, bcryptjs, concurrently, nodemon
 
+Для запросов к Backend используется Insomnia
 
